@@ -1,0 +1,64 @@
+<div class="encabezado">
+  <div class="field">
+      <label>Selecciona Cliente:</label>
+      <select [(ngModel)]="cliente">
+          <option value="Cliente 1">Cliente 1</option>
+          <option value="Cliente 2">Cliente 2</option>
+      </select>
+  </div>
+
+  <div class="field">
+      <label>Selecciona Marca:</label>
+      <select [(ngModel)]="marca">
+          <option value="Marca 1">Marca 1</option>
+          <option value="Marca 2">Marca 2</option>
+      </select>
+  </div>
+
+  <div class="field">
+      <label>Días de pronto pago:</label>
+      <input type="number" [(ngModel)]="dias" placeholder="Ingrese días">
+  </div>
+
+  <div class="field">
+      <label>Descuento:</label>
+      <input type="number" [(ngModel)]="descuento" placeholder="Ingrese descuento (%)">
+  </div>
+
+  <button class="agregar-btn" (click)="agregar()">Agregar</button>
+</div>
+
+<div class="tabla-container">
+  <div class="field">
+  <input type="text" placeholder="Buscar...">
+</div>
+  <table>
+      <thead>
+          <tr>
+              <th>Cliente</th>
+              <th>Marca</th>
+              <th>Días de pronto pago</th>
+              <th>Descuento</th>
+              <th>Acciones</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let registro of registros">
+              <td>{{ registro.cliente }}</td>
+              <td>{{ registro.marca }}</td>
+              <td>{{ registro.dias }}</td>
+              <td>{{ registro.descuento }}%</td>
+              <td><button class="agregar-btn">Editar</button></td> <!-- Cambié "Agregar" por "Editar" para evitar confusiones -->
+          </tr>
+      </tbody>
+  </table>
+
+  <!-- Paginación -->
+  <div class="paginacion">
+      <button>&laquo;</button>
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>&raquo;</button>
+  </div>
+</div>

@@ -1,0 +1,219 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f6f6f6;
+  }
+  
+  .encabezado {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    align-items: center;
+  }
+  
+  .field {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    flex: 1;
+  }
+  /* ... El resto de tus estilos ... */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  max-width: 500px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.modal-content h3 {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.modal-content p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.modal-content button {
+  display: block;
+  margin: 20px auto 0;
+  background-color: #FF3333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+  background-color: #e52d2d;
+}
+
+.is-active {
+  display: flex;
+}
+
+  
+  .encabezado {
+    flex-wrap: wrap;
+    justify-content: start; /* Cambio para que los campos no se expandan a todo lo ancho en móvil */
+  }
+  .encabezado label {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin: 10px;
+  }
+  
+  .encabezado select, 
+  .encabezado input {
+    flex-grow: 2;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 10px;
+    transition: border-color 0.3s;
+  }
+  
+  .encabezado select:focus, 
+  .encabezado input:focus {
+    border-color: #FF3333;
+    outline: none;
+  }
+  
+  .agregar-btn {
+    flex: 1; /* Hacer que el botón tenga el mismo tamaño que los otros campos */
+    margin-left: 10px;
+    background-color: #FF3333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px; /* Ajuste del padding */
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+  }
+  
+  .agregar-btn:hover {
+    background-color: #e52d2d;
+  }
+  
+  .tabla-container {
+    margin-top: 20px;
+    overflow: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .tabla-container table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  .tabla-container th, 
+  .tabla-container td {
+    border-bottom: 1px solid #eaeaea;
+    padding: 15px 10px;
+    text-align: left;
+  }
+  
+  .tabla-container th {
+    background-color: #f8f8f8;
+  }
+  
+  .paginacion {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  
+  .paginacion button {
+    margin: 0 5px;
+    padding: 10px 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .paginacion button:hover {
+    background-color: #f8f8f8;
+  }
+  
+  /* Responsive design for mobile devices */
+  @media only screen and (max-width: 768px) {
+    .encabezado {
+        flex-direction: column;
+    }
+  
+    .encabezado label {
+        width: 100%;
+        margin: 5px 0;
+    }
+    .encabezado {
+      flex-direction: column;
+  }
+  
+  .field {
+      margin-bottom: 10px;
+      width: 100%;
+  }
+  
+  .encabezado button.agregar-btn {
+      width: 100%;
+      margin-top: 2px;
+  }
+  
+    .encabezado select, 
+    .encabezado input {
+        margin-left: 0;
+    }
+  
+    /* Hacer que la tabla sea desplazable horizontalmente */
+    .tabla-container {
+        overflow-x: auto;
+    }
+  
+    .tabla-container table {
+        min-width: 600px; /* Ajusta este valor según la necesidad */
+    }
+  
+    /* Pequeñas optimizaciones para teléfonos */
+    .tabla-container th, 
+    .tabla-container td {
+        padding: 10px 5px;
+    }
+  }
+  
+  

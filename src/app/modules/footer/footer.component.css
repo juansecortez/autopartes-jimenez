@@ -1,0 +1,10 @@
+
+body, html {
+    overflow-x: hidden; /* Esto elimina el scroll horizontal */
+    overflow-y: auto; /* Esto permite el scroll vertical si es necesario */
+}.footer {
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+}

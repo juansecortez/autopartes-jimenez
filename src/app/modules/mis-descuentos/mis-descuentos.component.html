@@ -1,0 +1,58 @@
+<div class="encabezado">
+    <label>
+      Cliente:
+      <select [(ngModel)]="selectedClient" (change)="getCurrentRecords()" >
+        <option *ngFor="let client of clients" [value]="client">Cliente {{client}} </option>
+      </select>
+    </label>
+  </div>
+  
+  <div class="tabla-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Cliente ID</th>
+          <th>Folio</th>
+          <th>Saldo Actual</th>
+          <th>Fecha de Vencimiento</th>
+          <th>Resta Días</th>
+          <th>Días Pronto Pago</th>
+          <th>Pronto Pago</th>
+          <th>Acciones</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of getCurrentRecords()">
+          <td>{{record.clientId}}</td>
+          <td>{{record.folio}}</td>
+          <td>{{record.saldoActual}}</td>
+          <td>{{record.fechaVencimiento}}</td>
+          <td>{{record.restaDias}}</td>
+          <td>{{record.diasProntoPago}}</td>
+          <td>{{record.prontoPago}}</td>
+          <td><button class="agregar-btn" (click)="viewMore(record)">Ver más</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="paginacion">
+    <!-- Aquí tu lógica de paginación. Solo como estructura, no lo he implementado completamente -->
+    <button>Anterior</button>
+    <button>Siguiente</button>
+  </div>
+  <div class="modal" [ngClass]="{'is-active': showModal}">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <h3>Detalles del Registro</h3>
+      <p><strong>Cliente ID:</strong> {{selectedRecord?.clientId}}</p>
+      <p><strong>Folio:</strong> {{selectedRecord?.folio}}</p>
+      <p><strong>Saldo Actual:</strong> {{selectedRecord?.saldoActual}}</p>
+      <p><strong>Fecha de Vencimiento:</strong> {{selectedRecord?.fechaVencimiento}}</p>
+      <p><strong>Resta Días:</strong> {{selectedRecord?.restaDias}}</p>
+      <p><strong>Días Pronto Pago:</strong> {{selectedRecord?.diasProntoPago}}</p>
+      <p><strong>Pronto Pago:</strong> {{selectedRecord?.prontoPago}}</p>
+      <button class="agregar-btn" (click)="closeModal()">Cerrar</button>
+    </div>
+  </div>

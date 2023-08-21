@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+/* Establece la fuente Poppins como predeterminada */
+body, button, input, textarea, select {
+    font-family: 'Poppins', sans-serif;
+  }
+/* Reset básico */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    
+}
+  

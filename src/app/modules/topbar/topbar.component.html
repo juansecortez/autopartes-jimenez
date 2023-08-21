@@ -1,0 +1,31 @@
+<nav class="topbar">
+    <div class="logo-container">
+      <img src="https://cdn.shopify.com/s/files/1/0571/9274/3107/files/Logo_AJ_N.png?height=628&pad_color=ffffff&v=1626795518&width=1200" alt="Logo Empresa" class="logo">
+    </div>
+    <div class="links-container">
+      <!-- Links para resoluciones grandes -->
+      <div class="desktop-links">
+        <a routerLink="/agregar-descuentos">Agregar descuentos</a>
+        <a routerLink="/descuentos-por-cliente">Descuentos por cliente</a>
+        <a routerLink="/mis-descuentos">Mis descuentos</a>
+        <a class="logout" (click)="cerrarSesion()">Cerrar Sesión</a>
+        
+      </div>
+  
+      <!-- Botón de menu y links para resoluciones pequeñas -->
+      <div class="mobile-links">
+        <button (click)="showSidenav = !showSidenav" class="menu-btn">☰</button>
+        
+        <!-- Fondo oscuro para el sidenav -->
+        <div *ngIf="showSidenav" class="sidenav-backdrop" (click)="showSidenav = false"></div>
+        
+        <div *ngIf="showSidenav" class="sidenav">
+          <a routerLink="/agregar-descuentos" (click)="showSidenav = false">Agregar descuentos</a>
+          <a routerLink="/descuentos-por-cliente" (click)="showSidenav = false">Descuentos por cliente</a>
+          <a routerLink="/mis-descuentos" (click)="showSidenav = false">Mis descuentos</a>
+          <a class="logout" (click)="cerrarSesion();showSidenav = false">Cerrar Sesión</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  

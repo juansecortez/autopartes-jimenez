@@ -1,0 +1,145 @@
+/* Paleta de colores */
+:root {
+    --primary-color: #333;
+    --secondary-color: #606060;
+    --accent-color: #FFC107; /* Amarillo suave */
+    --bg-color: #F7F7F7; /* Un gris muy claro */
+  }
+  
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-color);
+    padding: 15px 30px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .topbar .logo-container .logo {
+    height: 60px;
+  }
+  
+  .topbar .links-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .topbar .links-container a,
+  .topbar .links-container button {
+    margin: 0 15px;
+    transition: color 0.3s, background-color 0.3s;
+    color: var(--primary-color);
+    text-decoration: none;
+    position: relative;
+  }
+  
+  .topbar .links-container a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s;
+  }
+  
+  .topbar .links-container a:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .topbar .links-container button {
+    background-color: var(--accent-color);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: rgb(255, 0, 0);
+    border-radius: 10px;
+  }
+  
+  .topbar .links-container button:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  .topbar .links-container .desktop-links {
+    display: none;
+  }
+  
+  .topbar .links-container .mobile-links .menu-btn {
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-color);
+    transition: color 0.3s;
+  }
+  
+  .topbar .links-container .mobile-links .menu-btn:hover {
+    color: var(--secondary-color);
+  }
+  
+  .topbar .links-container .mobile-links .sidenav-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  .topbar .links-container .mobile-links .sidenav {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 80%;
+    max-width: 320px;
+    z-index: 1001;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 25px;
+  }
+  
+  @media (min-width: 768px) {
+    .topbar .links-container .desktop-links {
+      display: flex;
+    }
+    .topbar .links-container .mobile-links {
+      display: none;
+    }
+  }
+  
+  /* Estilos mejorados para los links y botón de cerrar sesión */
+  .topbar .links-container a,
+  .topbar .links-container .sidenav a {
+    color: var(--accent-color); /* Amarillo por defecto */
+    transition: color 0.3s ease; /* Animación de cambio de color */
+  }
+  
+  .topbar .links-container a:hover,
+  .topbar .links-container .sidenav a:hover {
+    color: rgb(255, 0, 0); /* Cambio a rojo al pasar el ratón */
+  }
+  .topbar .links-container a:not(.logout) {
+    padding: 10px 0; /* Establece un padding vertical si es necesario */
+}
+  /* Botón de cerrar sesión */
+  a.logout {
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: all 0.3s ease; /* Transición */
+  }
+  
+  a.logout:hover {
+    background-color: rgba(255, 0, 0, 0.1); /* Un fondo rojo claro en hover */
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.15); /* Sombra más profunda en hover */
+  }
+  

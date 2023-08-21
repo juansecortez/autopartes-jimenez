@@ -1,0 +1,181 @@
+
+body, html {
+    overflow-x: hidden; /* Esto elimina el scroll horizontal */
+    overflow-y: auto; /* Esto permite el scroll vertical si es necesario */
+}
+.app-background {
+    height: 85vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://media.istockphoto.com/id/503808984/es/vector/auto-repuestos-patr%C3%B3n-perfecto.jpg?s=612x612&w=0&k=20&c=APyrkFIxWcAsvS6TToTp-9Z-aTQrCzeh_btV8790PTM='); 
+    background-size: auto; 
+    background-repeat: repeat;
+}
+
+
+.container-amarillo {
+    background-color: #FFF333; /* Amarillo */
+    padding: 15px; /* Este será el 'borde' amarillo alrededor del contenedor rojo */
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.container-rojo {
+    background-color: #FF3333; /* Rojo */
+    padding: 15px; /* Este será el 'borde' rojo alrededor del contenedor blanco */
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.container-blanco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 200px; /* establece un ancho fijo */
+    padding: 40px 60px; /* más padding para un diseño aireado */
+    border-radius: 15px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* sombra más prominente para dar profundidad */
+    transition: transform 0.3s; /* transición suave para el hover */
+}
+
+.container-blanco:hover {
+    transform: translateY(-5px); /* un pequeño movimiento hacia arriba al pasar el ratón para dar feedback */
+}
+
+.container-blanco img {
+    width: 150px; /* un poco más grande */
+    margin-bottom: 30px;
+}
+
+.container-blanco input {
+    margin: 15px 0; /* más margen */
+    padding: 12px 15px; /* más padding para un diseño aireado */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%; /* toma el ancho completo del contenedor */
+    font-size: 16px; /* tamaño de fuente más grande */
+    transition: border-color 0.3s; /* transición suave para el focus */
+}
+
+.container-blanco input:focus {
+    border-color: #FF3333; /* cambio de color al hacer focus */
+    outline: none; /* elimina el contorno azul predeterminado */
+}
+
+.container-blanco button {
+    margin-top: 30px;
+    background-color: #FF3333;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 18px; /* tamaño de fuente más grande */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* transición suave para el hover y sombra */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave por defecto */
+}
+
+.container-blanco button:hover {
+    background-color: #c5c4bd;
+    color: #FF3333;
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.15); /* Sombra más profunda en hover */
+}
+.helper-text {
+    font-size: 12px;
+    color: gray;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container-blanco {
+    animation: fadeInUp 0.5s forwards;
+   
+}
+.toggle-password-link {
+    display: inline-block;
+    margin-top: 5px;
+    color: #FF3333;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.toggle-password-link:hover {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .container-blanco {
+        width: 80%; /* Un ancho relativo para aprovechar más espacio en pantallas medianas */
+        padding: 20px 25px; /* Reducimos el padding */
+    }
+
+    .container-amarillo {
+        padding: 10px; /* Reducimos el padding del contenedor amarillo */
+    }
+
+    .container-rojo {
+        padding: 10px; /* Reducimos el padding del contenedor rojo */
+    }
+
+    .container-blanco img {
+        width: 120px; /* Un poco más pequeño */
+    }
+
+    .container-blanco input {
+        width: 90%; /* Reducir el ancho del input */
+        padding: 10px 12px; /* Reducir el padding */
+        margin: 10px 0; /* Ajustar el margen */
+        font-size: 14px; 
+    }
+
+
+
+    .container-blanco button {
+        font-size: 16px; /* Tamaño de fuente más pequeño */
+    }
+}
+
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 480px) {
+    .container-blanco {
+        width: 78%; /* Aprovecha casi todo el ancho de la pantalla */
+        padding: 15px 25px; /* Ajusta el padding nuevamente */
+    }
+
+    .container-amarillo {
+        padding: 8px; /* Aún más reducido el padding del contenedor amarillo */
+    }
+
+    .container-rojo {
+        padding: 8px; /* Aún más reducido el padding del contenedor rojo */
+    }
+
+    .container-blanco img {
+        width: 100px; /* Ajusta el tamaño de la imagen */
+        margin-bottom: 20px; /* Menor margen */
+    }
+
+    .container-amarillo, .container-rojo {
+        border-radius: 10px; /* Borde más suave */
+    }
+    .container-blanco input {
+        width: 75%; /* Ajustar aún más el ancho */
+        padding: 8px 10px; /* Ajustar el padding */
+        margin: 8px 0; /* Ajustar el margen */
+        font-size: 13px; 
+    }
+}

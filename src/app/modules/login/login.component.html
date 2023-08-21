@@ -1,0 +1,18 @@
+<div class="app-background">
+    <div class="container-amarillo">
+        <div class="container-rojo">
+            <div class="container-blanco">
+                <img src="https://cdn.shopify.com/s/files/1/0571/9274/3107/files/Logo_AJ_N.png?height=628&pad_color=ffffff&v=1626795518&width=1200" alt="Autopartes Jiménez">
+                <input type="text" placeholder="Usuario">
+<span class="helper-text">Ingrese su nombre de usuario</span>
+<input [type]="showPassword ? 'text' : 'password'" placeholder="Contraseña">
+<span class="helper-text">Ingrese su contraseña</span>
+<a href="javascript:void(0)" (click)="togglePasswordVisibility()" class="toggle-password-link">
+    {{ showPassword ? 'Ocultar' : 'Mostrar' }} Contraseña
+</a>
+
+                <button>Iniciar Sesión</button>
+            </div>
+        </div>
+    </div>
+</div>
